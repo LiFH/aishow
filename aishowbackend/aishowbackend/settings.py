@@ -25,7 +25,7 @@ SECRET_KEY = 'rv*a^!12idar-%-mfiyfse_((bpi@^k0v!642n&ps*ubpv75kd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','lifh.xin']
 
 
 # Application definition

@@ -103,8 +103,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aishowbackend/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="115">
+              <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -135,8 +135,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="372" />
-    <option name="y" value="97" />
+    <option name="x" value="777" />
+    <option name="y" value="83" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -297,7 +297,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="372" y="97" width="1938" height="1048" extended-state="0" />
+    <frame x="777" y="83" width="1938" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15987125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -504,8 +504,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aishowbackend/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="115">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding />
         </state>
       </provider>
