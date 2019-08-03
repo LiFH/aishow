@@ -28,7 +28,7 @@ render(){
         <Divider />
       </Typography>
       <Recognition onChange={this.getChildState} url={APIS.superResolution}/>
-      <img src='D:\workspace\aishow\aishowbackend\aishowbackend/upload/143090.jpg'  style={{ width: '600px'}} />
+  
     </div>
   );
 }
