@@ -6,10 +6,10 @@ const formatApi = (template, options) => {
 }
 
 const APIS = {
-  sexRecogniiton : 'http://127.0.0.1:8080/sexRecognition',
-  faceRecognition : 'http://127.0.0.1:8080/faceRecognition',
-  superResolution : 'http://127.0.0.1:8080/superResolution',
-  sceneRecognition : 'http://127.0.0.1:8080/sceneRecognition'
+  sexRecogniiton : 'http://lifh.xin:8080/sexRecognition',
+  faceRecognition : 'http://lifh.xin:8080/faceRecognition',
+  superResolution : 'http://lifh.xin:8080/superResolution',
+  sceneRecognition : 'http://lifh.xin:8080/sceneRecognition'
 }
 
 export { APIS, formatApi }
