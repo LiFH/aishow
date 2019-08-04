@@ -89,7 +89,7 @@ def vis_face_opencv(im_array, dets, landmarks=None):
     import cv2
     for i in range(dets.shape[0]):
         bbox = dets[i, :4]
-        cv2.rectangle(im_array,(int(bbox[0]),int(bbox[1])),(int(bbox[2]),int(bbox[3])),(255,0,0),1)
+        cv2.rectangle(im_array,(int(bbox[0]),int(bbox[1])),(int(bbox[2]),int(bbox[3])),(255,0,0),2)
         # rect = pylab.Rectangle((bbox[0], bbox[1]),
         #                      bbox[2] - bbox[0],
         #                      bbox[3] - bbox[1], fill=False,
