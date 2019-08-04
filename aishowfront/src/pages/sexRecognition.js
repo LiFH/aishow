@@ -37,24 +37,21 @@ export default class Sex extends React.Component {
   render() {
     return (
       <div>
-        
-      <Typography>
-      <Title>色情识别</Title>
-      <Paragraph>
-      人工智能鉴黄技术，智能识别图片和视频中的色情和性感内容，
-      让您的应用轻松过审，远离违规风险
-      </Paragraph>
-      <Divider />
-      </Typography>
-      <Row>
-      <Col span={12}>  
-      <Recognition onChange={this.getChildState} url = {APIS.sexRecognition}/>
-    
-        </Col>
-        <Col span={4}></Col>
-      <Col span={6}>{this.state.result}</Col>
-      
-    </Row>
+        <Typography>
+        <Title>色情识别</Title>
+        <Paragraph>
+        人工智能鉴黄技术，智能识别图片和视频中的色情和性感内容，
+        让您的应用轻松过审，远离违规风险
+        </Paragraph>
+        <Divider />
+        </Typography>
+        <Row>
+          <Col span={12}>  
+            <Recognition onChange={this.getChildState} url = {APIS.sexRecognition}/>
+          </Col>
+          <Col span={4}></Col>
+          <Col span={6}>{this.state.result}</Col>
+        </Row>
       </div>
 
       

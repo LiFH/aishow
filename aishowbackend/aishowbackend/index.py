@@ -12,6 +12,8 @@ from django.views.decorators.csrf import csrf_exempt
 from model.sceneRecognition.main import *
 from model.superResolution.main import *
 
+import base64
+
 def save_img(request):
     filename = os.path.dirname(__file__)
     myFile = request.FILES.get("img-name", None)  # 获取上传的文件，如果没有文件，则默认为None
@@ -58,8 +60,12 @@ def superResolution(request):
         # 放入CNN模块计算
         print(img_name)
         result = SR(img_name)
+        with open(img_name,'rb') as f:
+            base64_data = base64.b64encode(f.read())
+            image_str = base64_data.decode('ascii')  # byte类型转换为str
         ctx = {}
         ctx['result'] = result
+        ctx['img']= image_str
         return JsonResponse(ctx)
     return HttpResponse("error!!")
 

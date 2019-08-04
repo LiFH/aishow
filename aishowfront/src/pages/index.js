@@ -10,19 +10,19 @@ export default class Face extends React.Component {
   <Carousel autoplay>
         <div>
         <h3>人脸检测</h3>
-          <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
+          <img src={require('../image/banner/banner.jpg')} style={{height:'400px'}}/>
         </div>
         <div>
           <h3>色情识别</h3>
-          <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
+          <img src={require('../image/banner/banner-sex.jpg')} style={{height:'400px'}}/>
         </div>
         <div>
           <h3>场景识别</h3>
-          <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
+          <img src={require('../image/banner/banner-scene.jpg')} style={{height:'400px'}}/>
         </div>
         <div>
           <h3>图像超分辨率</h3>
-          <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
+          <img src={require('../image/banner/banner-SR.jpg')} style={{height:'400px'}}/>
         </div>
     </Carousel>
   

@@ -4,18 +4,23 @@ import React from "react";
 import { Typography, Divider } from 'antd';
 import { Recognition } from '../components/Recognition';
 import { APIS } from '../conf/APIS';
+
 const { Title, Paragraph, Text } = Typography;
 
 
 export default class SuperResolution extends React.Component {
   state = {
     result : null,
+    img :null,
   };
 
 
  /** 获取子组件状态 */
  getChildState = (state) => {
-  this.setState({result:state.result});
+   console.log(state);
+   var str = `data:image/jpeg;base64,${state.img}`
+   this.setState({img:str});
+  
 }
 render(){
   return (
@@ -28,7 +33,7 @@ render(){
         <Divider />
       </Typography>
       <Recognition onChange={this.getChildState} url={APIS.superResolution}/>
-  
+      <img src={this.state.img} style={{width:'100%'}} />
     </div>
   );
 }
