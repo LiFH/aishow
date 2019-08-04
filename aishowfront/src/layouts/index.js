@@ -79,7 +79,7 @@ function BasicLayout(props) {
             minHeight: '600px',
           }}
         >
-          <Route path="/index" component={index}></Route>
+          <Route path="/" component={index}></Route>
           <Route path="/faceRecognition" component={faceRecognition}></Route>
           <Route path="/sexRecognition" component={sexRecognition}></Route>
           <Route path="/sceneRecognition" component={sceneRecognition}></Route>

@@ -1,11 +1,12 @@
-import { Upload, Icon, message ,Input} from 'antd';
+import { Upload, Icon, message ,Input,Button,Row, Col} from 'antd';
 import React from "react";
 import ReactDOM from "react-dom";
 import { APIS } from '../conf/APIS'
 import { Typography, Divider } from 'antd';
-
+import { Recognition } from '../components/Recognition';
 const { Title, Paragraph, Text } = Typography;
 const { Search  } = Input;
+
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -25,73 +26,54 @@ function beforeUpload(file) {
   return isJpgOrPng && isLt2M;
 }
 
-export default class Avatar extends React.Component {
+export default class Face extends React.Component {
   state = {
     loading: false,
   };
+   /** 获取子组件状态 */
+ getChildState = (state) => {
+  const result = (
+    <div>
+      识别结果
+      <table>
+        <tbody>
+      {state.result.prediction.map((item,index)=>{
+        return <tr key={index} >
+          <td>{item.classes}</td>
+          <td>{item.probs}</td>
+        </tr>
+      })
+      }
+      </tbody>
+      </table>
+    </div>
+  );
+  this.setState({result:result});
+}
 
-  componentDidMount() {
-    fetch(APIS.sexRecogniiton).then(function(response){
-      console.log(response);
-    }).then(function(data){
-      console.log(data);
-    });
-  }
-
-  handleChange = info => {
-    if (info.file.status === 'uploading') {
-      this.setState({ loading: true });
-      return;
-    }
-    if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, imageUrl =>
-        this.setState({
-          imageUrl,
-          loading: false,
-        }),
-      );
-    }
-  };
-
-  render() {
-    const uploadButton = (
-      <div style={{height:'200px',width:'500px'}}>
-        <Icon type={this.state.loading ? 'loading' : 'plus'} />
-        <div className="ant-upload-text">Upload</div>
-      </div>
-    );
   
-    
-
+  render() {
+ 
     const { imageUrl } = this.state;
     return (
-      <div>
-        <Typography>
-        <Title>人脸识别</Title>
+
+            <div>
+            <Typography>
+            <Title>人脸检测</Title>
         <Paragraph>
-        待写。。
+        快速检测人脸并返回人脸框位置、定位五官与轮廓关键点
+        准确识别多种人脸属性
         </Paragraph>
-        <Divider />
-      </Typography>
-        <Upload
-        name="avatar"
-        listType="picture-card"
-        className="avatar-uploader"
-        showUploadList={false}
-        action= {APIS.sceneRecognition}
-        beforeUpload={beforeUpload}
-        onChange={this.handleChange}
-        >
-        {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '500%'}} /> : uploadButton}
-         </Upload>
-         <Search 
-          placeholder="请输入网络图片URL"
-          enterButton="检测"
-          size="large"
-          onSearch={value => console.log(value)}
-       />
-      </div>
+            <Divider />
+            </Typography>
+            <Row>
+              <Col span={12}>  
+                <Recognition onChange={this.getChildState} url = {APIS.faceRecognition}/>
+              </Col>
+              <Col span={4}></Col>
+              <Col span={6}>{this.state.result}</Col>
+            </Row>
+          </div>
       
     );
   }

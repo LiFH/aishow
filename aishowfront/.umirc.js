@@ -8,7 +8,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: false,
-      title: 'aishowfront',
+      title: 'ai演示系统',
       dll: false,
       
       routes: {

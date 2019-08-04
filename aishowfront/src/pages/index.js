@@ -8,13 +8,20 @@ export default function() {
     <div>
 <Carousel autoplay>
       <div>
-        <h3>人脸检测</h3>
+      <h3>人脸检测</h3>
+        <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
       </div>
       <div>
         <h3>色情识别</h3>
+        <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
+      </div>
+      <div>
+        <h3>场景识别</h3>
+        <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
       </div>
       <div>
         <h3>图像超分辨率</h3>
+        <img src={require('../image/1.jpg')} style={{height:'500px'}}/>
       </div>
   </Carousel>
 
@@ -43,20 +50,7 @@ export default function() {
       prototypes beautifully and efficiently.
     </Paragraph>
 
-    <Paragraph>
-      <ul>
-        <li>
-          <a href="/docs/spec/proximity">Principles</a>
-        </li>
-        <li>
-          <a href="/docs/pattern/navigation">Patterns</a>
-        </li>
-        <li>
-          <a href="/docs/resource/download">Resource Download</a>
-        </li>
-      </ul>
-    </Paragraph>
-
+  
     <Divider />
 
   </Typography>
