@@ -32,3 +32,18 @@
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
+
+
+.faceRecognition{
+  background: url(../image/banner/banner.jpg) no-repeat center 0;
+  background-size: 388px 328px;
+}
+.sexRecognition{
+
+}
+.sceneRecognition{
+
+}
+.superResolution{
+
+}

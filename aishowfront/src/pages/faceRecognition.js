@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 import { APIS } from '../conf/APIS'
 import { Typography, Divider } from 'antd';
 import { Recognition } from '../components/Recognition';
+
+
 const { Title, Paragraph, Text } = Typography;
 const { Search  } = Input;
 

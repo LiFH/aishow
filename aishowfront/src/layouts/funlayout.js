@@ -6,7 +6,6 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import { MenuLayout } from './menu'
 import index from '../pages/index'
-import {FunLayout} from './funlayout'
 import faceRecognition from '../pages/faceRecognition'
 import sexRecognition from '../pages/sexRecognition'
 import superResolution from '../pages/superResolution'
@@ -16,7 +15,7 @@ const { Header, Content, Sider ,Footer } = Layout;
 
 
 const { Title } = Typography;
-export default class BasicLayout extends React.Component {
+export  class FunLayout extends React.Component {
   state = {
     collapsed: false,
   };
@@ -26,23 +25,7 @@ export default class BasicLayout extends React.Component {
   }
   render(){
     return (
-      <Layout>
-      <Header className="header"  >
-        <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['1']}
-          style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item key="1"><Link to="/"></Link>首页</Menu.Item>
-          <Menu.Item key="2"><Link to="/fun"></Link>功能演示</Menu.Item>
-        </Menu>
-        {/* <Title>AI展示</Title> */}
-      </Header>
-      <Route exact path="/" component={index}></Route>
-      <Route path="/fun" component={FunLayout}></Route>
-      <Layout>
+        <Layout>
         <Sider  width={200} style={{ background: '#fff' }}  collapsible
           collapsed={this.state.collapsed}
           onCollapse={this.onCollapse}>
@@ -64,7 +47,6 @@ export default class BasicLayout extends React.Component {
             }}
           >
             {/* <Route exact path="/" component={index}></Route> */}
-            
             <Route path="/faceRecognition" component={faceRecognition}></Route>
             <Route path="/sexRecognition" component={sexRecognition}></Route>
             <Route path="/sceneRecognition" component={sceneRecognition}></Route>
@@ -72,10 +54,6 @@ export default class BasicLayout extends React.Component {
           </Content>
         </Layout>
       </Layout>
-      <Footer style={{ textAlign: 'center' }}>
-        AIshow ©2019 Created by 模式识别实验室
-      </Footer>
-    </Layout>
     );
   }
   
