@@ -7,10 +7,10 @@ const formatApi = (template, options) => {
 
 const host = 'http://lifh.xin:8080'
 const APIS = {
-  sexRecogniiton : {host}+'/sexRecognition',
-  faceRecognition : {host}+'/faceRecognition',
-  superResolution : {host}+'/superResolution',
-  sceneRecognition : {host}+'/sceneRecognition'
+  sexRecogniiton : `${host}/sexRecognition`,
+  faceRecognition : `${host}/faceRecognition`,
+  superResolution : `${host}/superResolution`,
+  sceneRecognition : `${host}/sceneRecognition`
 }
 
 export { APIS, formatApi }
