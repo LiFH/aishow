@@ -5,8 +5,9 @@ import { Typography ,Button} from 'antd';
 import React from "react";
 import {Link} from 'react-router-dom';
 import { MenuLayout } from './menu'
-import index from '../pages/index'
 import {FunLayout} from './funlayout'
+import index from '../pages/index'
+import banner from '../pages/banner'
 import faceRecognition from '../pages/faceRecognition'
 import sexRecognition from '../pages/sexRecognition'
 import superResolution from '../pages/superResolution'
@@ -36,12 +37,12 @@ export default class BasicLayout extends React.Component {
           style={{ lineHeight: '64px' }}
         >
           <Menu.Item key="1"><Link to="/"></Link>首页</Menu.Item>
-          <Menu.Item key="2"><Link to="/fun"></Link>功能演示</Menu.Item>
+          <Menu.Item key="2"><Link to="/faceRecognition"></Link>功能演示</Menu.Item>
         </Menu>
         {/* <Title>AI展示</Title> */}
       </Header>
-      <Route exact path="/" component={index}></Route>
-      <Route path="/fun" component={FunLayout}></Route>
+      <Route exact path="/" component={banner}></Route>
+      {/* <Route path="/fun" component={FunLayout}></Route> */}
       <Layout>
         <Sider  width={200} style={{ background: '#fff' }}  collapsible
           collapsed={this.state.collapsed}
@@ -63,7 +64,7 @@ export default class BasicLayout extends React.Component {
               minHeight: '600px',
             }}
           >
-            {/* <Route exact path="/" component={index}></Route> */}
+            <Route exact path="/" component={index}></Route>
             
             <Route path="/faceRecognition" component={faceRecognition}></Route>
             <Route path="/sexRecognition" component={sexRecognition}></Route>
