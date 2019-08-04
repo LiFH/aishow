@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from model.sceneRecognition.main import *
 from model.superResolution.main import *
-
+from model.faceRecognition.main import *
 import base64
 
 def save_img(request):
@@ -42,9 +42,21 @@ def sceneRecognition(request):
 
 @csrf_exempt
 def faceRecognition(request):
-    ctx = {}
-    ctx['name'] = "人脸识别"
-    return JsonResponse(ctx)
+    if request.method == "POST":
+        img_name = save_img(request)
+        print(img_name)
+        result = run_faceRecognition(img_name)
+        with open(result,'rb') as f:
+            base64_data = base64.b64encode(f.read())
+            image_str = base64_data.decode('ascii')  # byte类型转换为str
+        ctx = {}
+        ctx['result'] = result
+        ctx['img']= image_str
+        return JsonResponse(ctx)
+        ctx = {}
+        ctx['name'] = "人脸识别"
+        return JsonResponse(ctx)
+    return HttpResponse("请上传图片!!")
 
 @csrf_exempt
 def sexRecognition(request):
@@ -59,7 +71,7 @@ def superResolution(request):
         img_name = save_img(request)
         # 放入CNN模块计算
         print(img_name)
-        result = SR(img_name)
+        result = run_SR(img_name)
         with open(img_name,'rb') as f:
             base64_data = base64.b64encode(f.read())
             image_str = base64_data.decode('ascii')  # byte类型转换为str
@@ -67,5 +79,5 @@ def superResolution(request):
         ctx['result'] = result
         ctx['img']= image_str
         return JsonResponse(ctx)
-    return HttpResponse("error!!")
+    return HttpResponse("请上传图片!!")
 

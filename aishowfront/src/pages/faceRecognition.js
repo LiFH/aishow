@@ -7,50 +7,18 @@ import { Recognition } from '../components/Recognition';
 const { Title, Paragraph, Text } = Typography;
 const { Search  } = Input;
 
-
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
-
-function beforeUpload(file) {
-  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-  if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG file!');
-  }
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    message.error('Image must smaller than 2MB!');
-  }
-  return isJpgOrPng && isLt2M;
-}
-
 export default class Face extends React.Component {
   state = {
-    loading: false,
+    result : null,
+    img :null,
   };
-   /** 获取子组件状态 */
+ /** 获取子组件状态 */
  getChildState = (state) => {
-  const result = (
-    <div>
-      识别结果
-      <table>
-        <tbody>
-      {state.result.prediction.map((item,index)=>{
-        return <tr key={index} >
-          <td>{item.classes}</td>
-          <td>{item.probs}</td>
-        </tr>
-      })
-      }
-      </tbody>
-      </table>
-    </div>
-  );
-  this.setState({result:result});
+  console.log(state);
+  var str = `data:image/jpeg;base64,${state.img}`
+  this.setState({img:str});
+ 
 }
-
   
   render() {
  
@@ -71,7 +39,7 @@ export default class Face extends React.Component {
                 <Recognition onChange={this.getChildState} url = {APIS.faceRecognition}/>
               </Col>
               <Col span={4}></Col>
-              <Col span={6}>{this.state.result}</Col>
+              <img src={this.state.img} style={{width:'500px'}} />
             </Row>
           </div>
       

@@ -14,7 +14,7 @@ from torchvision.transforms import ToTensor
 
 import numpy as np
 
-def SR(input):
+def run_SR(input):
     print("123")
     # ===========================================================
     # input image setting
