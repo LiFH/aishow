@@ -5,8 +5,8 @@ const formatApi = (template, options) => {
   )
 }
 
-//const host = 'http://lifh.xin:8080'
-const host = 'http://127.0.0.1:8080'
+const host = 'http://lifh.xin:8080'
+// const host = 'http://127.0.0.1:8080'
 const APIS = {
   sexRecogniiton : `${host}/sexRecognition`,
   faceRecognition : `${host}/faceRecognition`,
